@@ -9,12 +9,13 @@ sudo pacman --noconfirm -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-ke
 sudo pacman --noconfirm -Syu
 # Install packages
 sudo pacman --noconfirm --needed -S \
-powerline-fonts make pip cargo python nodejs npm docker \
-nano stow btop git gitui neofetch \
-bat exa ranger fd ripgrep fzf zoxide unrar \
-hyprland eww-wayland  \
-fish alacritty kitty \
-neovim brave \
+# powerline-fonts make pip cargo python nodejs npm docker \
+# nano stow btop git gitui neofetch \
+# bat exa ranger fd ripgrep fzf zoxide unrar \
+# hyprland eww-wayland  \
+# fish alacritty kitty \
+# neovim brave \
+hyprland kitty
 
 git config --global user.name "Dev"
 git config --global user.email "houdeyer.julien@gmail.com"
