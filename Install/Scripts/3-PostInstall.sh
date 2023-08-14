@@ -10,13 +10,13 @@ sudo cp ~/ArchOs/Dotfiles/pacman/etc/pacman.conf /etc/
 sudo pacman --noconfirm -Syu
 # Install packages
 sudo pacman --noconfirm --needed -S \
+hyprland kitty
 # powerline-fonts make pip cargo python nodejs npm docker \
 # nano stow btop git gitui neofetch \
 # bat exa ranger fd ripgrep fzf zoxide unrar \
 # hyprland eww-wayland  \
 # fish alacritty kitty \
 # neovim brave \
-hyprland kitty
 
 # Setup dotfiles
 # ~/ArchOs/Dotfiles/install.sh
