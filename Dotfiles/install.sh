@@ -3,4 +3,4 @@
 cd ~/ArchOs/Dotfiles
 stow --target ~/ */
 bat cache --build
-sudo stow --target /etc/ pacman
+sudo stow --target / pacman
