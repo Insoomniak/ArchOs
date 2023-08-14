@@ -3,8 +3,8 @@
 mkdir ~/Downloads ~/Workspace ~/Scripts ~/Medias ~/Trash
 cd ~/Trash
 # Install yay package manager
-git clone https://aur.archlinux.org/yay.git
-cd yay && makepkg -si --noconfirm
+# git clone https://aur.archlinux.org/yay.git
+# cd yay && makepkg -si --noconfirm
 # Install packages
 yay -S --noconfirm --needed \
 powerline-fonts make pip cargo python nodejs npm docker \
