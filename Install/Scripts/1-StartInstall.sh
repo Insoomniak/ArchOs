@@ -7,7 +7,7 @@ loadkeys us
 timedatectl set-timezone Europe/Paris
 timedatectl set-ntp true
 # Start Archinstall with configs files
-archinstall --config ./Scripts/user_configuration.json --creds ./Scripts/user_credentials.json
+archinstall --config ~/ArchOs/Install/Scripts/user_configuration.json --creds ~/ArchOs/Install/Scripts/user_credentials.json
 # execute chroot script
 mv ArchOs/Install/Scripts/2-ChrootActions.sh /mnt/archinstall/root/
 arch-chroot /mnt/archinstall /root/2-ChrootActions.sh
