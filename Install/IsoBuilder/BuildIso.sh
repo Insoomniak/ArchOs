@@ -4,7 +4,6 @@
 #!/bin/zsh
 
 StartTime=$(date +%s)
-cd ~/ArchOs/Install/IsoBuilder
 pacman --noconfirm --needed -Sy archiso
 cp -r /usr/share/archiso/configs/releng/ ./ArchIsoSource
 chmod -R 777 ./ArchIsoSource
