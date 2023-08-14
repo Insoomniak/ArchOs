@@ -19,7 +19,7 @@ sudo pacman --noconfirm --needed -S \
 hyprland kitty
 
 # Setup dotfiles
-~/ArchOs/Dotfiles/install.sh
+# ~/ArchOs/Dotfiles/install.sh
 
 git config --global user.name "Dev"
 git config --global user.email "houdeyer.julien@gmail.com"
