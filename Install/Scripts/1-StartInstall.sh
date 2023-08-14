@@ -9,7 +9,7 @@ timedatectl set-ntp true
 # Start Archinstall with configs files
 archinstall --config ~/ArchOs/Install/Scripts/user_configuration.json --creds ~/ArchOs/Install/Scripts/user_credentials.json
 # execute chroot script
-mv ArchOs/Install/Scripts/2-ChrootActions.sh /mnt/archinstall/root/
+mv ~/ArchOs/Install/Scripts/2-ChrootActions.sh /mnt/archinstall/root/
 arch-chroot /mnt/archinstall /root/2-ChrootActions.sh
 rm /mnt/archinstall/root/2-ChrootActions.sh
 # add GetArchOsRepo script in /home/dev
