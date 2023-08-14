@@ -9,7 +9,7 @@ pacman --noconfirm --needed -Sy archiso
 cp -r /usr/share/archiso/configs/releng/ ./ArchIsoSource
 chmod -R 777 ./ArchIsoSource
 cp ../Scripts/0-GetArchOsRepo.sh ./ArchIsoSource/airootfs/root/
-echo "Please run ArchOs/Install/Script/1-StartInstall.sh" >> ./ArchIsoSource/airootfs/root/0-GetArchOsRepo.sh
+echo "echo 'Please run ArchOs/Install/Script/1-StartInstall.sh'" >> ./ArchIsoSource/airootfs/root/0-GetArchOsRepo.sh
 cp ./files/profiledef.sh ./ArchIsoSource/
 cp ./files/mkinitcpio.conf ./ArchIsoSource/airootfs/etc/mkinitcpio.conf
 cp ./files/packages.x86_64 ./ArchIsoSource/
