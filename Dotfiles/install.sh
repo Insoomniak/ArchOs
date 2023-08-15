@@ -5,3 +5,4 @@ stow --target ~/ */
 bat cache --build
 sudo rm -rf /etc/pacman.conf
 sudo stow --target / pacman
+stow --target ~/ ssh
