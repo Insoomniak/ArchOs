@@ -13,7 +13,7 @@ sudo chown dev /home/dev/.ssh/SSHKey-Dev-Private
 chmod 600 /home/dev/.ssh/SSHKey-Dev-Private
 
 rm -rf ~/.config/hypr
-stow --target ~/ fish
+stow --target ~/ hyprland
 
 rm -rf ~/.config/fish
 stow --target ~/ fish
