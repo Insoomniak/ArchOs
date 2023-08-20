@@ -24,6 +24,9 @@ stow --target ~/ kitty
 rm -rf ~/.config/starship
 stow --target ~/ starship
 
+rm -rf ~/.config/nvim
+stow --target ~/ nvim
+
 
 
 #stow --target ~/ */
