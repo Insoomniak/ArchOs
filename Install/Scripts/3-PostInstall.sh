@@ -12,7 +12,7 @@ sudo pacman --noconfirm -Syu
 sudo pacman --noconfirm --needed -S \
 openssh powerline-fonts make cargo python nodejs npm docker \
 nano stow btop git gitui neofetch \
-bat exa ranger fd ripgrep fzf zoxide unrar \
+bat exa ranger fd ripgrep fzf zoxide unrar jq \
 hyprland eww-wayland  \
 fish starship alacritty kitty \
 neovim brave \
