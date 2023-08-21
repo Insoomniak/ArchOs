@@ -14,7 +14,7 @@ openssh powerline-fonts make cargo python nodejs npm docker \
 nano stow btop git gitui neofetch \
 bat exa ranger fd ripgrep fzf zoxide unrar \
 hyprland eww-wayland  \
-fish starship alacritty kitty ttf-fira-code \
+fish starship alacritty kitty ttf-firacode-nerd \
 neovim brave \
 
 

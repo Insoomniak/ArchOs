@@ -2,6 +2,7 @@
 set fish_greeting
 # Define default editor
 set -gx EDITOR "nvim"
+set -gx them_powerline_fonts yes
 # Define manpager
 set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 # Disable useless infos in prompt
