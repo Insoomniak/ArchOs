@@ -82,7 +82,7 @@ local opts = {
 local mappings = {
   ['C'] = { "<cmd>:lua require('Comment.api').toggle.linewise.current()<CR>", 'Comment' },
   -- ['e'] = { '<cmd>NvimTreeToggle<cr>', 'Explorer' },
-  ['e'] = { '<cmd>NeoTreeFocusToggle<cr>', 'Explorer' },
+  ['e'] = { '<cmd>Neotree toggle<cr>', 'Explorer' },
   ['q'] = { '<cmd>q<cr>', 'Quit' },
   ['s'] = { "<cmd>lua require('leap').leap { target_windows = { vim.fn.win_getid() } }<cr>", 'Search' },
   --['Q'] = { '<cmd>qa!<cr>', 'Force Quit!' },
