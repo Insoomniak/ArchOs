@@ -24,4 +24,4 @@ source $HOME/.config/fish/fzf.fish
 # Source Starship
 starship init fish | source
 # Source command-not-found tool
-source /usr/share/doc/find-the-command/ftc.fish
+# source /usr/share/doc/find-the-command/ftc.fish
