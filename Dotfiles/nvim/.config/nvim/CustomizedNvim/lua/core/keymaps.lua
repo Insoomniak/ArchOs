@@ -62,7 +62,7 @@ local customKeymap = {
     -- new buffer
     ["<A-i>"] = ":enew<CR>",
     -- Open file explorer
-    ["e"] = ":NeoTreeFocusToggle<CR>",
+    ["e"] = ":Neotree toggle<CR>",
     ["t"] = ":ToggleTerm<CR>",
   },
   insert_mode = {
