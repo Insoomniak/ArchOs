@@ -21,6 +21,9 @@ stow --target ~/ fish
 rm -rf ~/.config/kitty
 stow --target ~/ kitty
 
+rm -rf ~/.config/waybar
+stow --target ~/ waybar
+
 rm -rf ~/.config/starship
 stow --target ~/ starship
 
