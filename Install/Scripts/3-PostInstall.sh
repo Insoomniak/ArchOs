@@ -35,6 +35,11 @@ git clone git@github.com:Insoomniak/ArchOs.git
 # Setup dotfiles
 ~/ArchOs/Dotfiles/install.sh
 
+# Setup docker
+sudo groupadd docker
+sudo usermod -aG docker dev
+sudo systemctl enable --now docker
+
 git config --global user.name "Dev"
 git config --global user.email "houdeyer.julien@gmail.com"
 
