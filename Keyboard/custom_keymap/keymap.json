@@ -5,7 +5,7 @@
     "keymap": "default",
     "layout": "LAYOUT_split_3x5_2",
     "layers": [
-        ["KC_T"        , "KC_R"        , "KC_E"           , "KC_W"          , "KC_Q",
+        ["KC_Q"        , "KC_W"        , "KC_E"           , "KC_R"          , "KC_T",
          "KC_Y"        , "KC_U"        , "KC_I"           , "KC_O"          , "KC_P",
 
          "LSFT_T(KC_A)", "LT(5,KC_S)"  , "LT(1,KC_D)"     , "LT(3,KC_F)"    , "KC_G",

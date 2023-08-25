@@ -8,10 +8,13 @@ if [ ! -d "qmk" ]; then
 fi
 
 # qmk new-keymap -kb $keyboard -km $layout
-rm -rf qmk/keyboards/ferris/keymaps/custom_keymap
-cp -r ./custom_keymap qmk/keyboards/ferris/keymaps/
-qmk compile -e CONVERT_TO=liatris -kb ferris/sweep -km custom_keymap
-cp -r qmk/.build/ferris_sweep_custom_keymap_liatris.uf2 ./keyboardFirmware.uf2
-rm -rf qmk/.build
-echo "Firmware built and copied to keyboardFirmware.uf2"
-echo "Press the reset button on the keyboard and copy the firmware to the keyboard"
+# rm -rf qmk/keyboards/ferris/keymaps/custom_keymap
+# cp -r ./custom_keymap qmk/keyboards/ferris/keymaps/
+
+echo "Please plug in left side of keyboard and press enter"
+read -p ""
+qmk flash -kb ferris/sweep -km via -e CONVERT_TO=liatris -bl uf2-split-left
+echo "Please plug in right side of keyboard and press enter"
+read -p ""
+qmk  -kb ferris/sweep -km via -e CONVERT_TO=liatris -bl uf2-split-right
+
