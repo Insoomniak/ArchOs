@@ -10,12 +10,13 @@ sudo cp /home/dev/ArchOs/Dotfiles/pacman/etc/pacman.conf /etc/
 sudo pacman --noconfirm -Syu
 # Install packages
 sudo pacman --noconfirm --needed -S \
-openssh make cargo python nodejs npm docker\
+openssh make cargo python nodejs npm docker prettier \
 nano stow btop git gitui neofetch \
 bat exa ranger fd ripgrep fzf zoxide unrar \
 hyprland waybar-hyprland-git eww-wayland  \
 fish starship alacritty kitty ttf-firacode-nerd powerline-fonts \
 neovim brave \
+brightnessctl \
 
 
 # Unmount and Mount Ventoy USB to get SSHKEYPrivate

@@ -4,9 +4,7 @@
   "height": 16,
   // Modules position
   "modules-left": [
-    "custom/launcher",
-    "custom/playerctl",
-    "custom/playerlabel"
+    "custom/launcher"
   ],
   "modules-center": [
     "wlr/workspaces"
@@ -26,27 +24,6 @@
     "on-click": "~/.config/bemenu/evocarbon/run.sh",
     "tooltip": "false"
   },
-  "custom/playerctl": {
-    "format": "{icon}",
-    "return-type": "json",
-    "exec": "playerctl -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
-    "on-click": "playerctl play-pause",
-    "on-click-middle": "playerctl previous",
-    "on-click-right": "playerctl next",
-    "format-icons": {
-      "Playing": "<span foreground='#46c880'>󰐌 </span>",
-      "Paused": "<span foreground='#cdd6f4'>󰏥 </span>"
-    }
-  },
-  "custom/playerlabel": {
-    "format": "<span>{}</span>",
-    "return-type": "json",
-    "max-length": 48,
-    "exec": "playerctl -a metadata --format '{\"text\": \"{{title}} - {{markup_escape(artist)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(artist)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
-    "on-click": "playerctl play-pause",
-    "on-click-middle": "playerctl previous",
-    "on-click-right": "playerctl next"
-  },
   "wlr/workspaces": {
     "active-only": false,
     "all-outputs": true,
@@ -62,26 +39,37 @@
     },
     "sort-by-number": true
   },
-  "clock": {
-    "format": "<span size='12000'></span> {:%I:%M %p}",
-    "tooltip": "true",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "on-click": "~/.config/wofi/evocarbon/wofi-power-menu.sh"
+  "tray": {
+    "icon-size": 16,
+    "spacing": 8
   },
-  "network": {
-    "format-wifi": "<span size='13000'>{icon}</span>",
-    "format-ethernet": "<span size='13000'>󰈀</span>",
-    "format-linked": "<span size='13000'>󰈀</span>",
-    "format-disconnected": "<span size='13000'>󰤮</span>",
-    "tooltip-format-wifi": "Connected to: {essid}\nSignal strength: {signalStrength}%",
+  "custom/updates-pacman-aur": {
+    "exec-on-event": true,
+    "format": "<span size='12000'></span> {}",
+    "exec": "$HOME/.config/waybar/scripts/updates-pacman-aur.sh",
+    "interval": 300,
+    "on-click": "kitty -c .config/kitty/evocarbon/kitty.conf sh -c 'sudo pacman -Syu ; echo Done - Press enter to exit; read _'",
+    "on-click-right": "kitty -c .config/kitty/evocarbon/kitty.conf sh -c 'yay -Sua --sudoloop ; echo Done - Press enter to exit; read _'",
+    "on-click-middle": "kitty -c .config/kitty/evocarbon/kitty.conf sh -c 'yay -Syu --sudoloop ; echo Done - Press enter to exit; read _'"
+  },
+  // Change monitor brightness
+  "backlight": {
+    "tooltip": true,
+    "tooltip-format": "Brightness",
+    "format": "<span size='12000'> {icon}</span> {percent}% ",
     "format-icons": [
-      "󰤟",
-      "󰤢",
-      "󰤥",
-      "󰤨"
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
     ],
-    "on-click": "xargs -a ~/.config/bemenu/evocarbon/config networkmanager_dmenu",
-    "on-click-right": "nm-connection-editor"
+    "on-click": "brightnessctl set +20%",
+    "on-click-right": "brightnessctl set 20%-"
   },
   "pulseaudio": {
     "format": "<span size='12000'>{icon}</span> {volume}%",
@@ -101,39 +89,6 @@
     "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
     "on-click-right": "pavucontrol"
   },
-  "custom/updates-pacman-aur": {
-    "exec-on-event": true,
-    "format": "<span size='12000'></span> {}",
-    "exec": "$HOME/.config/waybar/scripts/updates-pacman-aur.sh",
-    "interval": 300,
-    "on-click": "kitty -c .config/kitty/evocarbon/kitty.conf sh -c 'sudo pacman -Syu ; echo Done - Press enter to exit; read _'",
-    "on-click-right": "kitty -c .config/kitty/evocarbon/kitty.conf sh -c 'yay -Sua --sudoloop ; echo Done - Press enter to exit; read _'",
-    "on-click-middle": "kitty -c .config/kitty/evocarbon/kitty.conf sh -c 'yay -Syu --sudoloop ; echo Done - Press enter to exit; read _'"
-  },
-  "tray": {
-    "icon-size": 16,
-    "spacing": 8
-  },
-  // Change monitor brightness
-  "backlight": {
-    "tooltip": true,
-    "tooltip-format": "Brightness",
-    "format": "<span size='12000'> {icon}</span> {percent}% ",
-    "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    // Needs brightnessctl package to manage monitor brightness
-    "on-click": "brightnessctl set +20%",
-    "on-click-right": "brightnessctl set 20%-"
-  },
   "battery": {
     "states": {
       "critical": 15
@@ -152,6 +107,27 @@
       "󰂂"
     ],
     "tooltip-format": "Time remaining: {time}\nPower draw: {power}W"
+  },
+  "network": {
+    "format-wifi": "<span size='13000'>{icon}</span>",
+    "format-ethernet": "<span size='13000'>󰈀</span>",
+    "format-linked": "<span size='13000'>󰈀</span>",
+    "format-disconnected": "<span size='13000'>󰤮</span>",
+    "tooltip-format-wifi": "Connected to: {essid}\nSignal strength: {signalStrength}%",
+    "format-icons": [
+      "󰤟",
+      "󰤢",
+      "󰤥",
+      "󰤨"
+    ],
+    "on-click": "xargs -a ~/.config/bemenu/evocarbon/config networkmanager_dmenu",
+    "on-click-right": "nm-connection-editor"
+  },
+  "clock": {
+    "format": "<span size='12000'></span> {:%I:%M %p}",
+    "tooltip": "true",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "on-click": "~/.config/wofi/evocarbon/wofi-power-menu.sh"
   },
   // More
   "memory": {
