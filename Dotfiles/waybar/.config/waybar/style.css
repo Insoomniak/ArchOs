@@ -1,218 +1,181 @@
+@import './mocha.css';
+
+/* Global */
 * {
-  border: none;
-  border-radius: 0px;
-  font-family: "Fira Code Nerd Font Complete Mono";
-  font-size: 13px;
-  font-style: normal;
-  min-height: 0;
+  font-family: 'Fira Code Nerd Font Complete Mono';
+  font-weight: bold;
+  font-size: 0.9rem;
+  border-radius: 1rem;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+  background-color: shade(@base, 0.9)
 }
 
+@keyframes blink_red {
+  to {
+    background-color: @red;
+    color: @base;
+  }
+}
+
+.warning,
+.critical,
+.urgent {
+  animation-name: blink_red;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#mode,
+#clock,
+#memory,
+#temperature,
+#cpu,
+#custom-weather,
+#mpd,
+#idle_inhibitor,
+#backlight,
+#pulseaudio,
+#network,
+#battery,
+#custom-powermenu,
+#custom-cava-internal,
+#custom-launcher,
+#tray,
+#disk,
+#custom-pacman,
+#custom-scratchpad-indicator {
+  padding-left: 0.6rem;
+  padding-right: 0.6rem;
+}
+
+/* Bar */
 window#waybar {
-  background: rgba(16, 18, 19, 0.8);
-  color: #cdd6f4;
+  background-color: transparent;
 }
 
+window > box {
+  background-color: transparent;
+  margin: 0.3rem;
+  margin-bottom: 0;
+}
+
+/* Workspaces */
 #workspaces {
-  background: #0c0e0f;
-  margin: 5px 5px;
-  padding: 8px 5px;
+  margin: 0px 5px;
+  padding: 2px 5px;
   border-radius: 16px;
-  border: solid 0px #cdd6f4;
   font-weight: normal;
   font-style: normal;
 }
 #workspaces button {
-  padding: 0px 5px;
+  min-width: 20px;
+  color: #bac2de;
+  background-color: #bac2de;
   margin: 0px 3px;
-  border-radius: 16px;
-  color: #2f354a;
-  background-color: #2f354a;
+  padding: 3px 3px;
   transition: all 0.3s ease-in-out;
 }
 #workspaces button.active {
-  color: #cdd6f4;
-  background-color: #cdd6f4;
-  border-radius: 16px;
   min-width: 50px;
-  background-size: 400% 400%;
+  color: #74c7ec;
+  background-color: #74c7ec;
   transition: all 0.3s ease-in-out;
 }
 #workspaces button:hover {
+  color: #cdd6f4;
   background-color: #cdd6f4;
-  color: #cdd6f4;
   border-radius: 16px;
-  min-width: 50px;
-  background-size: 400% 400%;
 }
 
-#clock,
-#battery,
-#pulseaudio,
-#network,
-#custom-brightness,
-#custom-launcher,
-#custom-updates-pacman-aur {
-  background: transparent;
-  padding: 5px 5px 5px 5px;
-  margin: 5px 5px 5px 5px;
-  border-radius: 8px;
-  border: solid 0px #f4d9e1;
+/* Tooltip */
+tooltip {
+  background-color: @base;
 }
 
-#custom-brightness {
-  color: #cdd6f4;
-  font-weight: bold;
+tooltip label {
+  color: @rosewater;
 }
 
-#custom-updates-pacman-aur {
-  color: #cdd6f4;
-  font-weight: bold;
-}
-
-#tray {
-  background: #0c0e0f;
-  margin: 5px 5px 5px 5px;
-  border-radius: 16px;
-  padding: 0px 12px;
-  /*border-right: solid 1px #282738;*/
-}
-
-#clock {
-  color: #cdd6f4;
-  background-color: #0c0e0f;
-  border-radius: 0px 0px 0px 24px;
-  padding-left: 13px;
-  padding-right: 15px;
-  margin-right: 0px;
-  margin-left: 10px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  font-weight: bold;
-  /*border-left: solid 1px #282738;*/
-}
-
+/* battery */
 #battery {
-  color: #cdd6f4;
-  font-weight: bold;
+  color: @mauve;
 }
-
+#battery.full {
+  color: @green;
+}
 #battery.charging {
-  color: #8cb6ff;
+  color: @teal;
 }
-
+#battery.discharging {
+  color: @peach;
+}
 #battery.critical:not(.charging) {
-  color: #ff7eb6;
+  color: @pink;
+}
+#custom-powermenu {
+  color: @red;
 }
 
-#backlight {
-  color: #cdd6f4;
-  border-radius: 0px 0px 0px 0px;
-  margin: 5px;
-  margin-left: 0px;
-  margin-right: 0px;
-  padding: 0px 0px;
-  font-weight: bold;
+/* mpd */
+#mpd.paused {
+  color: @pink;
+  font-style: italic;
+}
+#mpd.stopped {
+  color: @rosewater;
+  /* background: transparent; */
+}
+#mpd {
+  color: @lavender;
 }
 
-#network {
-  color: #cdd6f4;
-  border-radius: 8px;
-  margin-right: 5px;
-  font-weight: bold;
+/* Extra */
+#custom-cava-internal {
+  color: @peach;
+  padding-right: 1rem;
 }
-
-#pulseaudio {
-  color: #cdd6f4;
-  border-radius: 8px;
-  margin-left: 0px;
-  font-weight: bold;
-}
-
 #custom-launcher {
-  color: #cdd6f4;
-  background-color: #0c0e0f;
-  border-radius: 0px 24px 0px 0px;
-  margin: 0px 0px 0px 0px;
-  padding: 0 20px 0 13px;
-  /*border-right: solid 1px #282738;*/
-  font-size: 20px;
+  color: @yellow;
 }
-
-#custom-launcher button:hover {
-  background-color: #fb4934;
-  color: transparent;
-  border-radius: 8px;
-  margin-right: -5px;
-  margin-left: 10px;
-}
-
-#custom-playerctl {
-  background: #0c0e0f;
-  padding: 0px 5px 0px 10px;
-  border-radius: 16px;
-  /*border-left: solid 1px #282738;*/
-  /*border-right: solid 1px #282738;*/
-  margin: 5px 7px;
-  font-weight: normal;
-  font-style: normal;
-  font-size: 16px;
-}
-
-#custom-playerlabel {
-  background: transparent;
-  padding-left: 10px;
-  padding-right: 5px;
-  border-radius: 16px;
-  /*border-left: solid 1px #282738;*/
-  /*border-right: solid 1px #282738;*/
-  margin-top: 5px;
-  margin-bottom: 5px;
-  font-weight: normal;
-  font-style: normal;
-}
-
-#window {
-  background: #0c0e0f;
-  padding-left: 15px;
-  padding-right: 15px;
-  border-radius: 16px;
-  /*border-left: solid 1px #282738;*/
-  /*border-right: solid 1px #282738;*/
-  margin-top: 5px;
-  margin-bottom: 5px;
-  font-weight: normal;
-  font-style: normal;
-}
-
-#cpu {
-  background-color: #0c0e0f;
-  /*color: #FABD2D;*/
-  border-radius: 16px;
-  margin: 5px;
-  margin-left: 5px;
-  margin-right: 5px;
-  padding: 0px 10px 0px 10px;
-  font-weight: bold;
-}
-
 #memory {
-  background-color: #0c0e0f;
-  /*color: #83A598;*/
-  border-radius: 16px;
-  margin: 5px;
-  margin-left: 5px;
-  margin-right: 5px;
-  padding: 0px 10px 0px 10px;
-  font-weight: bold;
+  color: @peach;
 }
-
+#cpu {
+  color: @blue;
+}
+#clock {
+  color: @rosewater;
+}
+#idle_inhibitor {
+  color: @green;
+}
+#temperature {
+  color: @sapphire;
+}
+#backlight {
+  color: @green;
+}
+#pulseaudio {
+  color: @mauve; /* not active */
+}
+#network {
+  color: @pink; /* not active */
+}
+#network.disconnected {
+  color: @foreground; /* not active */
+}
 #disk {
-  background-color: #0c0e0f;
-  /*color: #8EC07C;*/
-  border-radius: 16px;
-  margin: 5px;
-  margin-left: 5px;
-  margin-right: 5px;
-  padding: 0px 10px 0px 10px;
-  font-weight: bold;
+  color: @maroon;
+}
+#custom-pacman {
+  color: @sky;
+}
+#custom-scratchpad-indicator {
+  color: @yellow;
+}
+#custom-weather {
+  color: @red;
 }
