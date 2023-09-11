@@ -56,38 +56,18 @@
   "backlight": {
     "tooltip": true,
     "tooltip-format": "Brightness",
-    "format": "<span size='12000'> {icon}</span> {percent}% ",
-    "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
+    "format": "<span size='12000'> </span> {percent}% ",
     "on-click": "brightnessctl set +20%",
     "on-click-right": "brightnessctl set 20%-"
   },
   "pulseaudio": {
-    "format": "<span size='12000'>{icon}</span> {volume}%",
-    "format-muted": "<span size='12000' foreground='#ff7eb6'></span> {volume}%",
-    "format-icons": {
-      "headphone": "",
-      "hands-free": "",
-      "headset": "",
-      "phone": "",
-      "portable": "",
-      "car": "",
-      "default": [
-        "",
-        ""
-      ]
-    },
-    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-    "on-click-right": "pavucontrol"
+    "tooltip": true,
+    "tooltip-format": "Audio",
+    "format": "<span size='12000'> 󰕾</span> {volume}%",
+    "on-click": "pactl set-sink-volume @DEFAULT_SINK@ +20%",
+    "on-click-right": "pactl set-sink-volume @DEFAULT_SINK@ -20%"
+    // "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    // "on-click-right": "pavucontrol"
   },
   "battery": {
     "states": {
