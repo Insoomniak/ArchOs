@@ -64,18 +64,18 @@ window > box {
 
 /* Workspaces */
 #workspaces {
-  margin: 0px 5px;
-  padding: 2px 5px;
-  border-radius: 16px;
+  margin: 0px 0px;
+  padding: 2px 2px;
   font-weight: normal;
   font-style: normal;
 }
 #workspaces button {
-  min-width: 20px;
   color: #bac2de;
   background-color: #bac2de;
+  min-width: 20px;
+  border-radius: 25px;
   margin: 0px 3px;
-  padding: 3px 3px;
+  padding: 2px 2px;
   transition: all 0.3s ease-in-out;
 }
 #workspaces button.active {
@@ -87,7 +87,6 @@ window > box {
 #workspaces button:hover {
   color: #cdd6f4;
   background-color: #cdd6f4;
-  border-radius: 16px;
 }
 
 /* Tooltip */

@@ -13,7 +13,7 @@ sudo pacman --noconfirm --needed -S \
 openssh make cargo python nodejs npm docker prettier \
 nano stow btop git gitui neofetch \
 bat exa ranger fd ripgrep fzf zoxide unrar \
-hyprland waybar-hyprland-git eww-wayland  \
+hyprland waybar-hyprland-git hyprpaper eww-wayland  \
 fish starship alacritty kitty ttf-firacode-nerd powerline-fonts \
 neovim brave \
 brightnessctl \

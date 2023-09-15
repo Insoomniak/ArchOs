@@ -1,7 +1,6 @@
 {
   "modules-left": [
     "custom/launcher",
-    // "sway/workspaces",
     "custom/scratchpad-indicator",
     "temperature",
     "pulseaudio",
@@ -37,13 +36,19 @@
     "1": "1",
     "2": "2",
     "3": "3",
-    "4": "",
-    "5": ""
+    "4": "4",
+    "5": "5",
+    "6": "6"
     // "urgent": "",
     // "active": "",
     // "default": ""
   },
-  "sort-by-number": true
+  "sort-by-number": true,
+  "active-only": false,
+  "all-outputs": true,
+  "disable-scroll": false,
+  "on-scroll-up": "hyprctl dispatch workspace e-1",
+  "on-scroll-down": "hyprctl dispatch workspace e+1"
 },
   "custom/launcher": {
     "format": "",
@@ -54,27 +59,6 @@
   "custom/cava-internal": {
     "exec": "~/.config/waybar/Cava.sh",
     "tooltip": false
-  },
-  "sway/workspaces": {
-    "disable-scroll": true,
-    /* "all-outputs": true, */
-    "active-only": true,
-    "format": "{icon}",
-    "format-icons": {
-      "1": "一",
-      "2": "二",
-      "3": "三",
-      "4": "四",
-      "5": "五",
-      "6": "六",
-      "7": "七",
-      "8": "八",
-      "9": "九",
-      "10": "十",
-      "urgent": "",
-      "focused": "",
-      "default": ""
-    }
   },
   "idle_inhibitor": {
     "format": "{icon}",
