@@ -1,4 +1,0 @@
-BOOTLOADER = rp2040
-CONVERT_TO = liatris
-# SPLIT_KEYBOARD = yes
-# SERIAL_DRIVER = bitbang

@@ -18,10 +18,10 @@ cp -r ./customKeymap qmk/keyboards/ferris/keymaps/
 
 echo "Please plug in left side of keyboard and press enter"
 read -p ""
-qmk flash -kb ferris/sweep -km $KEYMAP -bl uf2-split-left
+qmk flash -kb ferris/sweep -km $KEYMAP -bl dfu-split-left
 echo "Please plug in right side of keyboard and press enter"
 read -p ""
-qmk flash -kb ferris/sweep -km $KEYMAP -bl uf2-split-right
+qmk flash -kb ferris/sweep -km $KEYMAP -bl dfu-split-right
 #
 # echo "Please plug in left side of keyboard with trrs jack connected and press enter"
 # read -p ""
