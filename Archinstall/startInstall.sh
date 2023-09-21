@@ -18,8 +18,9 @@ loadkeys us
 timedatectl set-timezone Europe/Paris
 timedatectl set-ntp true
 # Start Archinstall tool with config files
-cd ~/ArchOs/
-archinstall --config ./configFiles/user_configuration.json --creds ./configFiles/user_credentials.json
+cd ~/ArchOs/Archinstall/configFiles
+archinstall --config ./user_configuration.json --creds ./user_credentials.json
+cd ~/ArchOs
 # Move ChrootActions.sh in /root of the new system
 mv ./Archinstall/configFiles/ChrootActions.sh /mnt/archinstall/root/
 # Launch 2-ChrootActions.sh
