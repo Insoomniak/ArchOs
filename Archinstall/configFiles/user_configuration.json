@@ -1,0 +1,39 @@
+{
+  "additional-repositories": ["multilib"],
+  "archinstall-language": "English",
+  "audio_config": {
+    "audio": "pipewire"
+  },
+  "bootloader": "Grub",
+  "config_version": "2.6.0",
+  "debug": false,
+  "hostname": "ArchOs",
+  "kernels": ["linux-zen"],
+  "locale_config": {
+    "kb_layout": "us",
+    "sys_enc": "UTF-8",
+    "sys_lang": "en_US"
+  },
+  "network_config": {
+    "type": "nm"
+  },
+  "no_pkg_lookups": false,
+  "ntp": true,
+  "offline": false,
+  "packages": ["git"],
+  "parallel downloads": 0,
+  "profile_config": {
+    "gfx_driver": null,
+    "greeter": null,
+    "profile": {
+      "custom_settings": {},
+      "details": [],
+      "main": "Minimal"
+    }
+  },
+  "script": "guided",
+  "silent": false,
+  "swap": true,
+  "timezone": "Europe/Paris",
+  "version": "2.6.0"
+}
