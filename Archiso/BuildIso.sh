@@ -22,7 +22,7 @@ EndTime=$(date +%s)
 sudo chmod -R 777 ./out ./work
 rm -rf /home/dev/Downloads/ArchOsCustom.iso
 mv ./out/ArchOsCustom--x86_64.iso /home/dev/Downloads/ArchOsCustom.iso
-# rm -rf ./isoBuilder ./work ./out
+rm -rf ./isoBuilder ./work ./out
 
 echo "------------------------------------"
 echo "Iso builded in $((EndTime - StartTime)) seconds"

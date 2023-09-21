@@ -6,7 +6,7 @@ cd
 while true; do
     read -p "Do you whant to launch the ArchOs install script? (y/n) " yn
     case $yn in
-        [Yy]* ) ; break;;
+        [Yy]* ) echo "Starting installation" ; break;;
         [Nn]* ) exit;;
         * ) echo "Please choose (y) or (n).";;
     esac
