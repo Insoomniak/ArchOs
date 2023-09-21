@@ -13,9 +13,7 @@ cp ./configFiles/.zlogin ./isoBuilder/airootfs/root/
 cp ./configFiles/mkinitcpio.conf ./isoBuilder/airootfs/etc/mkinitcpio.conf
 cp ./configFiles/packages.x86_64 ./isoBuilder/
 # Add ArchOs folder to iso
-mkdir ./isoBuilder/airootfs/root/ArchOs
-cp -r ~/ArchOs/Archinstall ./isoBuilder/airootfs/root/ArchOs/
-cp -r ~/ArchOs/Dotfiles ./isoBuilder/airootfs/root/ArchOs/
+git clone https://github.com/Insoomniak/ArchOs.git ./isoBuilder/airootfs/root/
 # Build iso
 StartTime=$(date +%s)
 sudo mkarchiso -v ./isoBuilder/

@@ -5,4 +5,4 @@ fi
 
 ~/.automated_script.sh
 chmod -R +x ~/ArchOs/
-~/ArchOs/Archinstall/promptInstall.sh
+~/ArchOs/Archinstall/startInstall.sh
