@@ -13,7 +13,7 @@ cp ./configFiles/.zlogin ./isoBuilder/airootfs/root/
 cp ./configFiles/mkinitcpio.conf ./isoBuilder/airootfs/etc/mkinitcpio.conf
 cp ./configFiles/packages.x86_64 ./isoBuilder/
 # Add ArchOs folder to iso
-git clone https://github.com/Insoomniak/ArchOs.git ./isoBuilder/airootfs/root/
+git clone https://github.com/Insoomniak/ArchOs.git ./isoBuilder/airootfs/root/ArchOs
 # Build iso
 StartTime=$(date +%s)
 sudo mkarchiso -v ./isoBuilder/
@@ -22,7 +22,7 @@ EndTime=$(date +%s)
 sudo chmod -R 777 ./out ./work
 rm -rf /home/dev/Downloads/ArchOsCustom.iso
 mv ./out/ArchOsCustom--x86_64.iso /home/dev/Downloads/ArchOsCustom.iso
-rm -rf ./isoBuilder ./work ./out
+# rm -rf ./isoBuilder ./work ./out
 
 echo "------------------------------------"
 echo "Iso builded in $((EndTime - StartTime)) seconds"
